@@ -1,0 +1,4 @@
+- name: MustGather
+  ansible.builtin.command:
+   oc adm must-gather
+  #register: must_gather_output

@@ -1,0 +1,3 @@
+---
+- import_tasks: sosreport1.yml
+- import_tasks: move.yml

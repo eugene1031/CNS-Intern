@@ -1,0 +1,6 @@
+- name: Get must-gather directory name
+  ansible.builtin.shell:
+    cmd: ls -d must-gather* | grep 'must-gather.local\.'
+  args:
+    executable: /bin/bash
+  register: must_gather_dir

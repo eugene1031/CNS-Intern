@@ -1,0 +1,4 @@
+- name: Move to tmp
+  ansible.builtin.command: 
+   mv must-gather.tar.gz /tmp
+  #when: must_gather_output is success

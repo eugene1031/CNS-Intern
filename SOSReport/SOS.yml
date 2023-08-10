@@ -1,0 +1,10 @@
+---
+- name: SOS Report
+  hosts: node
+  remote_user: root
+  gather_facts: false
+
+  roles:
+   #- role: must-gather
+   #- role: sos-report
+   - role: addattachmant-upload

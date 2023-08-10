@@ -1,0 +1,3 @@
+- name: Debug must_gather_output
+  ansible.builtin.debug:
+    msg: "{{ must_gather_dir.stdout }}"

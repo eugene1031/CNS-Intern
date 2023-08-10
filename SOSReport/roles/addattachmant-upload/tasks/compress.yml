@@ -1,0 +1,2 @@
+- name: Create diagnostic data tar.gz archive
+  ansible.builtin.shell: "tar cvaf /tmp/diagnostic-data.tar.gz -C /tmp diagnostic-data"

@@ -1,0 +1,7 @@
+- name: Copy diagnostic data tar.gz to remote host
+  ansible.builtin.copy:
+    src: /tmp/diagnostic-data.tar.gz
+    dest: /tmp/
+  delegate_to: 10.250.75.140
+  vars:
+    ansible_ssh_pass: Admin12345

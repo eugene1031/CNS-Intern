@@ -1,0 +1,4 @@
+- name: Compress file
+  ansible.builtin.command:
+   tar cvaf must-gather.tar.gz "{{ must_gather_dir.stdout }}"
+  #when: must_gather_output is success
