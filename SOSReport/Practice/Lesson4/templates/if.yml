@@ -1,0 +1,14 @@
+---
+- name: Template If
+  hosts: node
+  remote_user: osboxes
+  gather_facts: true
+ 
+  vars:
+   key1: 11
+
+  tasks:
+   - name: Template If
+     ansible.builtin.template:
+      src: if.j2
+      dest: /tmp/if

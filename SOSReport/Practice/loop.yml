@@ -1,0 +1,8 @@
+--- 
+- name: Loop practice
+  hosts: node
+  remote_user: osboxes
+  gather_facts: true
+
+  roles:
+   - role: loop

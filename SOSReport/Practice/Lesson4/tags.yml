@@ -1,0 +1,24 @@
+---
+- name: Tag Practice
+  hosts: node
+  remote_user: osboxes
+  gather_facts: false
+
+  vars:
+   key1: [1,2,3,4,5]
+
+  tasks:
+   - name: task1
+     ansible.builtin.debug:
+      msg: "hi"
+   - name: task2
+     tags: task2
+     block:
+      - name: Print
+        ansible.builtin.debug:
+         msg: "Tags practice in Lesson4"
+      - name: Mapping
+        ansible.builtin.debug: 
+         msg: "{{ item }}"
+        loop: "{{ key1 }}" 
+      

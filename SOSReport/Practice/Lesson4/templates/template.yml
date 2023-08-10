@@ -1,0 +1,17 @@
+---
+- name: Test Template
+  hosts: node
+  remote_user: osboxes
+  gather_facts: true
+
+  vars:
+   play_var: Variable from play
+
+  vars_files:
+   - ./vars/main.yml
+
+  tasks:
+   - name: Test Template
+     ansible.builtin.template:
+      src: template.j2
+      dest: /tmp/templates

@@ -1,0 +1,17 @@
+---
+- name: When3
+  hosts: node
+  remote_user: osboxes
+  gather_facts: true
+
+  tasks: 
+   - name: task1
+     ansible.builtin.command:
+      echo " Hello "
+     when: ansible_facts.distribution == " Linux "
+     register: result
+
+   - name: task2
+     ansible.builtin.debug:
+      msg: " Be executed "
+     when: result is skipped

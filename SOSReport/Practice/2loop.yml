@@ -1,0 +1,17 @@
+---
+- name: double loop
+  hosts: node
+  remote_user: osboxes
+  gather_facts: true
+  
+  vars:
+   key1: [4,5,6]
+   key2: [1,2,3]
+
+  tasks:
+  - name: Permutation
+    ansible.builtin.debug:
+     msg: "{{ item}} - {{ansible_loop.index0}}"
+    loop: "{{key1 | product(key2) | list}}"
+    loop_control:
+     extended: true

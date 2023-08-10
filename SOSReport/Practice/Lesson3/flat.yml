@@ -1,0 +1,15 @@
+---
+- name: Flat
+  hosts: node
+  remote_user: osboxes
+  gather_facts: false
+
+  vars:
+   key1: [key2, [value4, value5]]
+
+  tasks:
+  - name: Flat
+    ansible.builtin.debug:
+     msg: "{{ item }}"
+    loop: "{{ key1 | flatten }}"
+    

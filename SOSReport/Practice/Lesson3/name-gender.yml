@@ -1,0 +1,16 @@
+---
+- name: Name-gender
+  hosts: node
+  remote_user: osboxes
+  gather_facts: false
+
+  vars:
+   classmate:
+    - { name: Kate, gender: female }
+    - { name: Kevin, gender: male }
+
+  tasks:
+   - name: Name-gender
+     ansible.builtin.debug:
+      msg: "{{ item.name }} is {{ item.gender }}"
+     loop: "{{ classmate }}" 

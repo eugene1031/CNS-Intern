@@ -1,0 +1,89 @@
+2023-07-25 01:37:27,573 p=20935 u=osboxes n=ansible | ansible-node1 | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python"
+    }, 
+    "changed": false, 
+    "ping": "pong"
+}
+2023-07-25 23:47:36,009 p=4969 u=osboxes n=ansible | [WARNING]: Unable to parse /home/osboxes/ansible/Eugene/Lesson5/inventories/test as an inventory source
+
+2023-07-25 23:47:36,009 p=4969 u=osboxes n=ansible | [WARNING]: No inventory was parsed, only implicit localhost is available
+
+2023-07-25 23:47:36,010 p=4969 u=osboxes n=ansible | [WARNING]: provided hosts list is empty, only localhost is available. Note that the implicit localhost does not match 'all'
+
+2023-07-25 23:47:36,356 p=4969 u=osboxes n=ansible | [WARNING]: Could not match supplied host pattern, ignoring: node
+
+2023-07-25 23:47:36,357 p=4969 u=osboxes n=ansible | PLAY [role Practice] *****************************************************************************************************************************************
+2023-07-25 23:47:36,357 p=4969 u=osboxes n=ansible | skipping: no hosts matched
+2023-07-25 23:47:36,357 p=4969 u=osboxes n=ansible | PLAY RECAP ***************************************************************************************************************************************************
+2023-07-25 23:48:10,522 p=4977 u=osboxes n=ansible | PLAY [role Practice] *****************************************************************************************************************************************
+2023-07-25 23:48:10,551 p=4977 u=osboxes n=ansible | TASK [firstrole : first tasks] *******************************************************************************************************************************
+2023-07-25 23:48:10,610 p=4977 u=osboxes n=ansible | fatal: [ansible-node1]: FAILED! => {"msg": "template error while templating string: no test named 'first'. String: {{ This is first task }}"}
+2023-07-25 23:48:10,611 p=4977 u=osboxes n=ansible | PLAY RECAP ***************************************************************************************************************************************************
+2023-07-25 23:48:10,611 p=4977 u=osboxes n=ansible | ansible-node1              : ok=0    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2023-07-25 23:51:58,147 p=5068 u=osboxes n=ansible | PLAY [role Practice] *****************************************************************************************************************************************
+2023-07-25 23:51:58,171 p=5068 u=osboxes n=ansible | TASK [firstrole : first tasks] *******************************************************************************************************************************
+2023-07-25 23:51:58,230 p=5068 u=osboxes n=ansible | fatal: [ansible-node1]: FAILED! => {"msg": "template error while templating string: no test named 'first'. String: {{ This is first task }}"}
+2023-07-25 23:51:58,231 p=5068 u=osboxes n=ansible | PLAY RECAP ***************************************************************************************************************************************************
+2023-07-25 23:51:58,231 p=5068 u=osboxes n=ansible | ansible-node1              : ok=0    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2023-07-25 23:52:50,285 p=5089 u=osboxes n=ansible | ERROR! We were unable to read either as JSON nor YAML, these are the errors we got from each:
+JSON: No JSON object could be decoded
+
+Syntax Error while loading YAML.
+  mapping values are not allowed in this context
+
+The error appears to be in '/home/osboxes/ansible/Eugene/Lesson5/roles/firstrole/tasks/main.yml': line 3, column 26, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+ - name: first tasks
+    ansible.builtin.debug:
+                         ^ here
+
+2023-07-25 23:53:29,717 p=5144 u=osboxes n=ansible | PLAY [role Practice] *****************************************************************************************************************************************
+2023-07-25 23:53:29,740 p=5144 u=osboxes n=ansible | TASK [firstrole : first tasks] *******************************************************************************************************************************
+2023-07-25 23:53:29,799 p=5144 u=osboxes n=ansible | fatal: [ansible-node1]: FAILED! => {"msg": "template error while templating string: no test named 'first'. String: {{ This is first task }}"}
+2023-07-25 23:53:29,800 p=5144 u=osboxes n=ansible | PLAY RECAP ***************************************************************************************************************************************************
+2023-07-25 23:53:29,800 p=5144 u=osboxes n=ansible | ansible-node1              : ok=0    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2023-07-25 23:54:19,450 p=5164 u=osboxes n=ansible | PLAY [role Practice] *****************************************************************************************************************************************
+2023-07-25 23:54:19,473 p=5164 u=osboxes n=ansible | TASK [firstrole : First tasks] *******************************************************************************************************************************
+2023-07-25 23:54:19,533 p=5164 u=osboxes n=ansible | fatal: [ansible-node1]: FAILED! => {"msg": "template error while templating string: no test named 'first'. String: {{ This is first task }}"}
+2023-07-25 23:54:19,534 p=5164 u=osboxes n=ansible | PLAY RECAP ***************************************************************************************************************************************************
+2023-07-25 23:54:19,534 p=5164 u=osboxes n=ansible | ansible-node1              : ok=0    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2023-07-25 23:54:34,112 p=5185 u=osboxes n=ansible | PLAY [role Practice] *****************************************************************************************************************************************
+2023-07-25 23:54:34,140 p=5185 u=osboxes n=ansible | TASK [firstrole : First tasks] *******************************************************************************************************************************
+2023-07-25 23:54:34,196 p=5185 u=osboxes n=ansible | fatal: [ansible-node1]: FAILED! => {"msg": "template error while templating string: no test named 'first'. String: {{ This is first task }}"}
+2023-07-25 23:54:34,197 p=5185 u=osboxes n=ansible | PLAY RECAP ***************************************************************************************************************************************************
+2023-07-25 23:54:34,197 p=5185 u=osboxes n=ansible | ansible-node1              : ok=0    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2023-07-26 00:00:47,190 p=5290 u=osboxes n=ansible | PLAY [role Practice] *****************************************************************************************************************************************
+2023-07-26 00:00:47,213 p=5290 u=osboxes n=ansible | TASK [firstrole : First tasks] *******************************************************************************************************************************
+2023-07-26 00:00:47,271 p=5290 u=osboxes n=ansible | fatal: [ansible-node1]: FAILED! => {"msg": "template error while templating string: no test named 'first'. String: {{ This is first task }}"}
+2023-07-26 00:00:47,273 p=5290 u=osboxes n=ansible | PLAY RECAP ***************************************************************************************************************************************************
+2023-07-26 00:00:47,273 p=5290 u=osboxes n=ansible | ansible-node1              : ok=0    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2023-07-26 00:04:05,587 p=5384 u=osboxes n=ansible | PLAY [role Practice] *****************************************************************************************************************************************
+2023-07-26 00:04:05,611 p=5384 u=osboxes n=ansible | TASK [firstrole : First tasks] *******************************************************************************************************************************
+2023-07-26 00:04:05,627 p=5384 u=osboxes n=ansible | ok: [ansible-node1] => {
+    "msg": " This is first task "
+}
+2023-07-26 00:04:05,633 p=5384 u=osboxes n=ansible | TASK [firstrole : Second tasks] ******************************************************************************************************************************
+2023-07-26 00:04:05,648 p=5384 u=osboxes n=ansible | ok: [ansible-node1] => {
+    "msg": " This is second task "
+}
+2023-07-26 00:04:05,651 p=5384 u=osboxes n=ansible | PLAY RECAP ***************************************************************************************************************************************************
+2023-07-26 00:04:05,651 p=5384 u=osboxes n=ansible | ansible-node1              : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2023-07-26 01:41:57,624 p=6933 u=osboxes n=ansible | PLAY [role Practice] *****************************************************************************************************************************************
+2023-07-26 01:41:57,649 p=6933 u=osboxes n=ansible | TASK [firstrole : include_tasks] *****************************************************************************************************************************
+2023-07-26 01:41:57,666 p=6933 u=osboxes n=ansible | included: /home/osboxes/ansible/Eugene/Lesson5/roles/firstrole/tasks/firsttask.yml for ansible-node1
+2023-07-26 01:41:57,674 p=6933 u=osboxes n=ansible | TASK [firstrole : First tasks] *******************************************************************************************************************************
+2023-07-26 01:41:57,688 p=6933 u=osboxes n=ansible | ok: [ansible-node1] => {
+    "msg": " This is first task "
+}
+2023-07-26 01:41:57,693 p=6933 u=osboxes n=ansible | TASK [firstrole : include_tasks] *****************************************************************************************************************************
+2023-07-26 01:41:57,708 p=6933 u=osboxes n=ansible | included: /home/osboxes/ansible/Eugene/Lesson5/roles/firstrole/tasks/secondtask.yml for ansible-node1
+2023-07-26 01:41:57,715 p=6933 u=osboxes n=ansible | TASK [firstrole : Second tasks] ******************************************************************************************************************************
+2023-07-26 01:41:57,733 p=6933 u=osboxes n=ansible | ok: [ansible-node1] => {
+    "msg": " This is second task "
+}
+2023-07-26 01:41:57,735 p=6933 u=osboxes n=ansible | PLAY RECAP ***************************************************************************************************************************************************
+2023-07-26 01:41:57,735 p=6933 u=osboxes n=ansible | ansible-node1              : ok=4    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   

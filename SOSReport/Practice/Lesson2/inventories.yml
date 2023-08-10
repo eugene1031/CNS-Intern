@@ -1,0 +1,10 @@
+---
+- name: Inventories Practice 
+  hosts: node
+  remote_user: osboxes
+  gather_facts: false
+
+  tasks:
+  - name: Print env var
+    ansible.builtin.debug:
+     msg: "{{ var_file }}"

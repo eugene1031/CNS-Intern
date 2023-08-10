@@ -1,0 +1,17 @@
+---
+- name: Handler
+  hosts: node
+  remote_user: osboxes
+  gather_facts: false
+
+  tasks:
+   - name: Trigger Handler
+     ansible.builtin.command:
+      echo "Trigger Handler"
+     notify:
+      FirstHandler
+
+  handlers:
+   - name: FirstHandler
+     ansible.builtin.debug:
+      msg: "Be triggered"

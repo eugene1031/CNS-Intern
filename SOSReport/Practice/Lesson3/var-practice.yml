@@ -1,0 +1,25 @@
+---
+- name: Var practice
+  hosts: node
+  remote_user: osboxes
+  gather_facts: false
+  vars: 
+   key1: inside
+
+  tasks:
+  - name: Print the value
+    ansible.builtin.debug:
+     msg: "{{ key1 }}"
+
+
+- name: Var file
+  hosts: node
+  remote_user: osboxes
+  gather_facts: false
+  vars_files:
+   - ./vars/main.yml
+
+  tasks:
+  - name: Print the value
+    ansible.builtin.debug:
+     msg: "{{ var_file }}"

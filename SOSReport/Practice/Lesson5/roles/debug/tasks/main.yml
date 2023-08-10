@@ -1,0 +1,4 @@
+--- 
+- name: Print var
+  debug:
+   msg: "The debug role"

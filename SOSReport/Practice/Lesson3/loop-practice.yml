@@ -1,0 +1,14 @@
+---
+- name: Loop Practice
+  hosts: node
+  remote_user: osboxes
+  gather_facts: false
+
+  vars: 
+   key1: [1, 2, 3, 4, 5]
+
+  tasks:
+  - name: List with array
+    ansible.builtin.debug:
+     msg: "{{ item }}"
+    loop: "{{ key1 }}"

@@ -1,0 +1,5 @@
+- name: Print bigger than 6
+  ansible.builtin.debug:
+   msg: "{{ item }}"
+  loop: "{{ key1 }}"
+  when: item > 6

@@ -1,0 +1,24 @@
+---
+- name: role Practice
+  hosts: node
+  remote_user: osboxes
+  gather_facts: false
+
+  roles: 
+   #- role: nginx
+    # tags: [nginx, web]
+   #- role: httpd
+   #  tags: [httpd, web]
+    #- role: debug
+    - role: debug
+    - role: firstrole
+    - role: httpd
+    - role: nginx
+    
+  vars:
+   key2: "value from Play"  
+
+  tasks:
+   - name: Print Play
+     ansible.builtin.debug:
+      msg: "{{ key2 }}"

@@ -1,0 +1,6 @@
+- name: Permutation
+  ansible.builtin.debug:
+   msg: "{{ item[0] }} - {{ item[1] }} - {{ ansible_loop.index0 }}"
+  loop: "{{ key1 | product(key2) | list }}"
+  loop control:
+   extended: true 

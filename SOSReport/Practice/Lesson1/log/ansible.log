@@ -1,0 +1,7 @@
+2023-07-25 01:37:27,573 p=20935 u=osboxes n=ansible | ansible-node1 | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python"
+    }, 
+    "changed": false, 
+    "ping": "pong"
+}

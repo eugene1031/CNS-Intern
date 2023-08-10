@@ -1,0 +1,16 @@
+---
+- name: Linux or rocky
+  hosts: node
+  remote_user: osboxes
+  gather_facts: true
+
+  tasks:
+  - name: Linux
+    ansible.builtin.debug:
+     msg: "{{ Linux }}"
+    when: ansible_facts['distribution'] == 'Linux'
+
+  - name: rocky
+    ansible.builtin.debug:
+     msg: "{{ Rocky }}"
+    when: ansible_facts.distribution == "Rocky" 

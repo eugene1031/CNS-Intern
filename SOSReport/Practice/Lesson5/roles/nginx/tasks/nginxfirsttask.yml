@@ -1,0 +1,4 @@
+- name: First tasks
+  ansible.builtin.debug:
+   msg: " This is first task "
+   tags: ['newTag']
