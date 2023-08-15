@@ -1,2 +1,5 @@
-[node]
+[bastion_server]
 10.250.75.165 ansible_user=root
+
+[uploader]
+10.250.75.140 ansible_user=root
