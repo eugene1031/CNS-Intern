@@ -1,0 +1,7 @@
+- name: Create diagnostic data tar.gz archive
+  ansible.builtin.command: 
+   tar zcvf /tmp/diagnostic-data.tar.gz /tmp/diagnostic-data
+
+- name: Clean up diagnostics
+  ansible.builtin.shell: "rm -rf /tmp/diagnostic-data"
+

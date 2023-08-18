@@ -1,4 +1,4 @@
 - name: Run toolbox command
-  delegate_to: 10.250.75.140
   ansible.builtin.command: 
    toolbox 'rm -f /etc/redhat-support-tool.conf; cp /host/tmp/redhat-support-tool.conf /etc/redhat-support-tool.conf; redhat-support-tool addattachment -c {{ case_id }} /host/tmp/diagnostic-data.tar.gz'
+   

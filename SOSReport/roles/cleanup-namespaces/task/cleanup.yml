@@ -1,0 +1,3 @@
+- name: Clean up openshift namespace
+  ansible.builtin.shell:
+    cmd: oc get ns | awk '$1 ~/openshift-debug|openshift-must/' | awk {'print "oc delete ns " $1 ";"'}

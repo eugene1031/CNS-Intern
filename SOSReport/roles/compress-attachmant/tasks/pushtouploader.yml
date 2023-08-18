@@ -1,0 +1,2 @@
+- name: Copy diagnostic data tar.gz to remote host
+  ansible.builtin.command: "scp -C -B /tmp/diagnostic-data.tar.gz root@10.250.75.140:/tmp/diagnostic-data.tar.gz"

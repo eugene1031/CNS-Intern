@@ -6,14 +6,36 @@
   
   vars:
     ansible_ssh_pass: Admin12345
-    node_name: compute1.ocp.olg.online.com
+    node_names: 
+     - compute1.ocp.olg.online.com
+     - compute0.ocp.olg.online.com
     case_id: 03586842
 
   roles:
    - role: must-gather
    - role: sos-report
-   - role: addattachmant-upload
+   - role: compress-attachmant
+
+- name: upload attachments
+  hosts: uploader
+  remote_user: root
+  gather_facts: false
+
+  vars:
+    ansible_ssh_pass: Admin12345
+    case_id: 03586842
+
+  roles:
    - role: toolbox-upload
 
+- name: cleanup namespaces
+  hosts: bastion_server
+  remote_user: root
+  gather_facts: false
 
+  vars:
+    ansible_ssh_pass: Admin12345
+
+  roles:
+   - role: cleanup-namespaces
    

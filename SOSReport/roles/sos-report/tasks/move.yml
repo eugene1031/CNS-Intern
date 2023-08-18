@@ -1,6 +1,6 @@
 - name: Create new file path
   set_fact:
-    new_file_path: "{{ extracted_file_path.replace('/host/var/', '') }}"
+    new_file_path: "{{ extracted_file_path.replace('/host/var', '') }}"
 
 - name: Display extracted file path
   debug:
@@ -12,5 +12,6 @@
 
 - name: Copy and cat file
   ansible.builtin.shell: |
-    oc debug node/{{ node_name }} -- bash -c 'cat {{ extracted_file_path }}' > /{{ new_file_path }}  
+    oc debug node/{{ item }} -- bash -c 'cat {{ extracted_file_path }}' > /{{ new_file_path }}  
   changed_when: false
+  loop: "{{ node_names }}"

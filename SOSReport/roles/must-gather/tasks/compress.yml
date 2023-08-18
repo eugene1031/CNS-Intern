@@ -1,4 +1,7 @@
 - name: Compress file
   ansible.builtin.command:
-   tar cvaf must-gather.tar.gz "{{ must_gather_dir.stdout }}"
+   tar zcvf must-gather.tar.gz "{{ must_gather_dir.stdout }}"
   #when: must_gather_output is success
+
+- name: Clean up diagnostics
+  ansible.builtin.shell: "rm -rf {{ must_gather_dir.stdout }}"

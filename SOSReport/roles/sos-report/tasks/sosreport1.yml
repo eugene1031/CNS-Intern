@@ -1,8 +1,9 @@
 - name: Run sosreport command
   ansible.builtin.command: >
-   oc debug node/{{ node_name }} -- chroot /host toolbox sos report -k crio.all=on -k crio.logs=on --case-id {{ case_id }} --batch
+   oc debug node/{{ item }} -- chroot /host toolbox sos report -k crio.all=on -k crio.logs=on --case-id {{ case_id }} --batch
   register: sosreport_output
   changed_when: false  
+  loop: "{{ node_names }}"
 
 - name: Debug sosreport_output.stdout
   debug:
@@ -15,7 +16,10 @@
   when: "'/host/var/tmp/sosreport-compute' in item"
   changed_when: false
 
+- name: remove tab in extracted file path
+  set_fact:
+    extracted_file_path: "{{ extracted_file_path.replace('\t', '') }}"
+
 - name: Display extracted file path
   debug:
     var: extracted_file_path
-
