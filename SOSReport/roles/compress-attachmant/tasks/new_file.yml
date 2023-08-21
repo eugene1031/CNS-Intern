@@ -1,3 +1,0 @@
-- name: Set new_file_path fact
-  ansible.builtin.set_fact:
-   new_file_path: "{{ new_file_path }}"

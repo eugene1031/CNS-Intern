@@ -2,8 +2,7 @@
   ansible.builtin.command: >
    oc debug node/{{ item }} -- chroot /host toolbox sos report -k crio.all=on -k crio.logs=on --case-id {{ case_id }} --batch
   register: sosreport_output
-  changed_when: false  
-  loop: "{{ node_names }}"
+  changed_when: false
 
 - name: Debug sosreport_output.stdout
   debug:
@@ -23,3 +22,28 @@
 - name: Display extracted file path
   debug:
     var: extracted_file_path
+
+- name: Create new file path
+  set_fact:
+    new_file_path: "{{ extracted_file_path.replace('/host/var', '') }}"
+
+- name: Display extracted file path
+  debug:
+    var: extracted_file_path
+
+- name: Display new file path
+  debug:
+    var: new_file_path
+
+- name: Copy and cat file
+  ansible.builtin.shell: |
+    oc debug node/{{ item }} -- bash -c 'cat {{ extracted_file_path }}' > /{{ new_file_path }}  
+  changed_when: false
+
+- name: Create diagnostic data directory
+  ansible.builtin.file:
+    path: /tmp/diagnostic-data
+    state: directory
+
+- name: Move files to diagnostic data directory
+  ansible.builtin.command: "mv {{new_file_path}} /tmp/diagnostic-data/"

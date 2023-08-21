@@ -1,5 +1,2 @@
 - name: Move files to diagnostic data directory
-  ansible.builtin.command: "mv {{ item }} /tmp/diagnostic-data/"
-  with_items:
-    - /tmp/must-gather.tar.gz
-    - /{{new_file_path}} 
+  ansible.builtin.command: "mv /tmp/must-gather.tar.gz /tmp/diagnostic-data/"

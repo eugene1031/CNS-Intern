@@ -1,4 +1,0 @@
-- name: Create diagnostic data directory
-  ansible.builtin.file:
-    path: /tmp/diagnostic-data
-    state: directory

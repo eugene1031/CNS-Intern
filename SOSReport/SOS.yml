@@ -15,6 +15,7 @@
    - role: must-gather
    - role: sos-report
    - role: compress-attachmant
+   - role: cleanup-namespaces
 
 - name: upload attachments
   hosts: uploader
@@ -27,15 +28,3 @@
 
   roles:
    - role: toolbox-upload
-
-- name: cleanup namespaces
-  hosts: bastion_server
-  remote_user: root
-  gather_facts: false
-
-  vars:
-    ansible_ssh_pass: Admin12345
-
-  roles:
-   - role: cleanup-namespaces
-   

@@ -1,6 +1,4 @@
 ---
-- import_tasks: creat_directory.yml
-- import_tasks: new_file.yml
 - import_tasks: move.yml
 - import_tasks: compress.yml
 - import_tasks: pushtouploader.yml

@@ -1,3 +1,4 @@
 ---
-- import_tasks: sosreport1.yml
-- import_tasks: move.yml
+- name: sosreport
+  include_tasks: sosreport1.yml
+  loop: "{{ node_names }}"
